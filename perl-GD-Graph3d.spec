@@ -16,7 +16,6 @@ BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl-GDGraph
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is the GD::Graph3d extensions module. It provides 3D graphs for the
