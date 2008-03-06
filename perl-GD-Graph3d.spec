@@ -1,7 +1,7 @@
 %define module	GD-Graph3d
 %define name	perl-%{module}
 %define version 0.63
-%define release %mkrel 10
+%define release %mkrel 11
 
 Name:		%{name}
 Version:	%{version}
