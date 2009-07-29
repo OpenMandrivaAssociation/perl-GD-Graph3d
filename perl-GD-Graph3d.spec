@@ -1,22 +1,22 @@
-%define module	GD-Graph3d
-%define name	perl-%{module}
-%define version 0.63
-%define release %mkrel 12
+%define upstream_name	 GD-Graph3d
+%define upstream_version 0.63
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Create 3D Graphs with GD and GD::Graph
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/W/WA/WADG/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}/
+Url:            http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://search.cpan.org/CPAN/authors/id/W/WA/WADG/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl-GDGraph
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is the GD::Graph3d extensions module. It provides 3D graphs for the
@@ -31,7 +31,7 @@ support all the options in those. Make sure to read the documentation on
 GD::Graph.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 perl -pi -e 'tr/\r//d;' Changes
 
 %build
@@ -53,4 +53,3 @@ rm -rf %{buildroot}
 %doc Changes
 %{perl_vendorlib}/GD
 %{_mandir}/*/*
-
