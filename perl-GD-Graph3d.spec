@@ -26,21 +26,21 @@ support all the options in those. Make sure to read the documentation on
 GD::Graph.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{modver}
 perl -pi -e 'tr/\r//d;' Changes
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes
 %{perl_vendorlib}/GD
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
 
