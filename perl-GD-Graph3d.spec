@@ -4,7 +4,7 @@
 Summary:	Create 3D Graphs with GD and GD::Graph
 Name:		perl-%{modname}
 Version:	%{modver}
-Release:	18
+Release:	19
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/GD-Graph3d
@@ -12,6 +12,7 @@ Source0:	https://cpan.metacpan.org/authors/id/W/WA/WADG/GD-Graph3d-%{modver}.tar
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
+BuildRequires:	perl(Test)
 BuildRequires:	perl-GDGraph
 
 %description
